@@ -249,3 +249,8 @@ a {
 .img-circle {
     border-radius: 50%;
 }
+
+.contact{
+  display: inline;
+  margin-right: 60px;
+}
