@@ -245,3 +245,7 @@ a {
 .cf {
   zoom:1;
 }
+
+.img-circle {
+    border-radius: 50%;
+}
