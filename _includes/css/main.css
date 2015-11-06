@@ -364,7 +364,7 @@ nav ul li:hover, nav ul li.active {
 .contact{
   padding-left: 80px;
  
-  display: inline;
+  display: inline-block;
   
 }
 
