@@ -1,146 +1,66 @@
+---
+---
 <!DOCTYPE html>
-<html>
-
+<html dir="ltr" lang="en">
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-  <title>HourOfCode</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+	<meta name="keywords" content="{{ site.keywords }}">
+	<meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
+	{% if site.touch_icon %}<link rel="apple-touch-icon" href="{{ site.touch_icon }}">{% endif %}
 </head>
-
 <body>
+  <div id="main">
 
-  <header>
-    <div class="container">
-      <h1>HourOfCode</h1>
-      <h2>Welcome Hackers!</h2>
+    <nav><ul>
+      {% for node in site.posts reversed limit:4 %}
+        {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+        <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
+      {% endfor %}
+    </ul></nav>
 
-      <section id="downloads">
-        <a class="btn" target="_blank" href="http://1drv.ms/1XNtfmE">Submit Beginner Code</a>
-        <a href="http://1drv.ms/1XNtfmE" target="_blank" class="btn">Submit Intermediate Code</a>
-        <a href="http://1drv.ms/1XNtfmE" target="_blank" class="btn">Submit Advanced Code</a>
-        <br><br>
-        <h6>Please submit a link to a Github Repo. You may submit a Youtube demo if you would like :)</h6>
-        <!--     <a href="https://github.com/gcrev93/HourOfCode" class="btn btn-github"><span class="icon"></span>View on GitHub</a> -->
-      </section>
+
+    {% for page in site.posts reversed limit:4 %}
+      {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
+      <div id="{{id}}" class="section p-{{id}}">
+        {% if page.icon %}
+        <div class="subtlecircle sectiondivider imaged">
+          <img src="{{page.icon}}" alt="section icon" />
+          <h5 class="icon-title">{{ page.title }}</h5>
+        </div>
+        {% elsif page.fa-icon %}
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-{{ page.fa-icon }} fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">{{ page.title }}</h5>
+        </div>
+        {% endif %}
+        <div class="container {{ page.style }}">
+          <!--Adding Tags list -->
+          {{page.content}}
+
+        </div>
+      </div>
+    {% endfor %}
+
+
+    <div id="footer" class="section text-white">
+      <div class="container">
+        {% capture foottext %} {% include footer.md %} {% endcapture %}
+        {{ foottext | markdownify }}
+      </div>
     </div>
-  </header>
+  </div>
 
-  <div class="container">
-    <section id="main_content">
-      <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to HourOfCode</h3>
-
-      <p>Hey Hackers! If you are little brain fried and want to do a cool quick hack for a cool prize, check out the coding
-        challenges below and see what you can do! Keep in mind these challenges should only be taking up to an hour (or less)...
-        we don't want to take away from your hacks. But also if you want to use what you create in these challenges for your
-        hack, feel free to do so. </p>
-      <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beginner Challenge</h3>
-
-      <p>Lets do something fun! Make a tic tac toe game, whether it is a mobile app or web app and deploy it on azure. Be creative, dont just do X's
-        and O's; try different Microsoft logos or rival football teams!
-      </p>
-
-      <h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intermediate Challenge</h3>
-
-      <p></p>
-
-      <h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced Challenge</h3>
-
-      <p></p>
-
-
-
-      <h3>Need Help?</h3>
-
-      <p>Having trouble with challenges? Don't be discouraged, come by our table and ask for assistance. Or send a quick email
-        to any of the contacts below.</p>
-
- <h3>Microsoft Contacts</3>
-      <br><br> 
-       
-      <span >
-           <div class="contact">
-                <img class="img-circle" width="130px" src="images/adamtuliper.jpg" alt=""/>
-           </div>
-           
-           <div style="display: inline-block;">
-           <p>Adam Tuliper</p>
-           <p>Email: <a href="mailto:adamt@microsoft.com">adamt@microsoft.com</a> </p>
-            <a href="http://www.twitter.com/adamtuliper">@adamtuliper</a>
-            </div>
-            
-      </span>
-      <br> <br> <br> <br>
-     <span >
-           <div class="contact">
-                <img class="img-circle" width="130px" src="images/katvharris.jpg" alt=""/>
-           </div>
-           
-           <div style="display: inline-block;">
-           <p>Katherine Harris</p>
-           <p>Email: <a href="mailto:kaharri@microsoft.com">kaharri@microsoft.com</a> </p>
-            <a href="http://www.twitter.com/katvharris">@katvharris</a>
-            </div>
-            
-      </span>
-      <br> <br> <br> <br>
-      <span >
-           <div class="contact">
-                <img class="img-circle" width="130px" src="images/askthedata.jpg" alt=""/>
-           </div>
-           
-           <div style="display: inline-block;">
-           <p>Andrew Moll</p>
-           <p>Email: <a href="mailto:andrew.moll@microsoft.com">andrew.moll@microsoft.com</a> </p>
-            <a href="http://www.twitter.com/askthedata">@askthedata</a>
-            </div>
-            
-      </span>
-      <br> <br> <br> <br>
-      <span >
-           <div class="contact">
-                <img class="img-circle" width="130px" src="images/bretstateham.jpg" alt=""/>
-           </div>
-           
-           <div style="display: inline-block;">
-           <p>Bret Stateham</p>
-           <p>Email: <a href="mailto:bret.stateham@microsoft.com">bret.stateham@microsoft.com</a> </p>
-            <a href="http://www.twitter.com/bretstateham">@bretstateham</a>
-            </div>
-            
-      </span>
-      <br> <br> <br> <br>
-      <span >
-           <div class="contact">
-                <img class="img-circle" width="130px" src="images/timmyreilly.jpg" alt=""/>
-           </div>
-           
-           <div style="display: inline-block;">
-           <p>Tim Reilly</p>
-           <p>Email: <a href="mailto:tim.reilly@microsoft.com">tim.reilly@microsoft.com</a> </p>
-            <a href="http://www.twitter.com/timmyreilly">@timmyreilly</a>
-            </div>
-            
-      </span>
-      <br> <br> <br> <br>
-    
-      
-                   
-
-      </section>
-    </div>
-    
-
-  
-     
-  
-  </body>
+{% include analytics.html %}
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
 </html>
