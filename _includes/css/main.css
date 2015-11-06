@@ -358,6 +358,11 @@ nav ul li:hover, nav ul li.active {
 
 .contacts{
   text-align:center;
+  background-color: #D2D2D2;
+}
+
+contact{
+  display: inline-block;
 }
 
 .img-circle{
