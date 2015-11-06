@@ -355,3 +355,11 @@ nav ul li:hover, nav ul li.active {
     column-count:         2;
   }
 }
+
+.contacts{
+  text-align:center;
+}
+
+.image-circle{
+  border-radius: 150px;
+}
