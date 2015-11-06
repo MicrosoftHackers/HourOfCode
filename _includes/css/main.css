@@ -366,6 +366,10 @@ nav ul li:hover, nav ul li.active {
   
 }
 
+.contact p{
+  padding-left: 80px;
+}
+
 .img-circle{
   border-radius: 150px;
 }
