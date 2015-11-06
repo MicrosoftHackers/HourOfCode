@@ -1,0 +1,46 @@
+---
+
+port: 4000
+host: 0.0.0.0
+safe: false
+
+
+### site serving configuration ###
+exclude: [CNAME, README.md, .gitignore]
+permalink: / ## disables post output
+timezone: null
+lsi: false
+markdown: kramdown
+highlighter: pygments
+
+
+### content configuration ###
+title:       "Microsoft Hackers"
+keywords:    "Getting Started, Hacking with Microsoft, Azure, Microsoft"
+description: "A place to find all things Microsoft Hackathon!"
+source_link: "https://github.com/t413/SinglePaged"
+favicon:     "img/favicon.ico"
+touch_icon:  "img/apple-touch-icon.png"
+google_analytics_key: UA-49607422-1 ## put YOUR key here to enable tracking! (blank to disable)
+
+
+### template colors, used site-wide via css ###
+colors:
+  black:     '#000000'
+  white:     '#ffffff'
+  lightgray: '#D2D2D2'
+  darkgray:  '#505050'
+  blue:      '#0078D7'
+  green:     '#107C10'
+  purple:    '#5C2D91'
+  turquoise: '#0fbfcf'
+  yellow:    '#FFB900'
+  orange:    '#D83B01'
+  red:       '#E81123'
+  magenta:   '#E40098'
+  teal:      '#008272'
+  
+
+kramdown:
+  auto_ids:  false
+
