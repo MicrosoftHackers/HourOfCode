@@ -21,6 +21,8 @@
       {% for node in site.posts reversed limit:4 %}
         {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
         <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
+        <li ><a href="#contacts">Contacts</a></li>
+        <li><a href="http://1drv.ms/1WDDL2B">Submit</a></li>
       {% endfor %}
     </ul></nav>
 
